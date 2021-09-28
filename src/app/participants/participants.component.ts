@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ParticipantsService } from './participants.service';
 
 @Component({
@@ -16,22 +16,12 @@ export class ParticipantsComponent {
     this.display = this.participants = service.getParticipants()
   }
 
-  female(){
-    this.showAll()
-    this.display = this.filterGender("Female")
-  }
-
-  male(){
-    this.showAll()
-    this.display = this.filterGender("Male")
-  }
-
   showAll(){
     this.display = this.participants
   }
 
   filterGender(gender: string){
-    return this.participants.filter(participant => participant.gender === gender)
+    this.display = this.participants.filter(participant => participant.gender === gender)
   }
 
 }
