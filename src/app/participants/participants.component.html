@@ -1,0 +1,23 @@
+<div class="card">
+    <div class="card-header bg-info d-grid gap-2 d-md-flex">
+      <h4 class="text-white m-1">{{title}}</h4>
+      <div class="ms-auto">
+        <button class="btn btn-light btn-sm m-1" (click)="female()">F</button>
+        <button class="btn btn-light btn-sm m-1" (click)="male()">M</button>
+        <button class="btn btn-light btn-sm m-1" (click)="showAll()">A</button>
+      </div>
+    </div>
+    <div class="card-body">
+      <table class="table">
+          <tbody>
+            <tr *ngFor="let participant of display">
+                <td>{{participant.name}}</td>
+                <td class="text-center"><a href="#" class="btn btn-info text-white btn-sm">{{participant.age}} years old</a></td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
